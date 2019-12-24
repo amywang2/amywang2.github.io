@@ -1,0 +1,10 @@
+body {
+	background-color: powderblue;
+}
+p {
+	font-family: courier;
+	font-size: 160%;
+}
+<!-- #s are for ids 
+p.class is for class-->
+
