@@ -6,7 +6,6 @@ body {
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center;
-	margin: auto;
 }
 p {
 	font-family: courier;
@@ -14,6 +13,9 @@ p {
 }
 a {
 	text-decoration: none;
+}
+#headings {
+	text-align:center;
 }
 <!-- #s are for ids 
 p.class is for class-->
