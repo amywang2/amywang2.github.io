@@ -1,6 +1,11 @@
 body {
 	background-color: powderblue;
 }
+#index {
+	background-image: url('/images/background.JPG');
+	background-attachment: fixed;
+	background-size: 90% 90%;
+}
 p {
 	font-family: courier;
 	font-size: 160%;
