@@ -5,7 +5,7 @@ body {
 	background-image: url('/images/background.JPG');
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	background-size: 90% 90%;
+	background-position: center;
 }
 p {
 	font-family: courier;
