@@ -16,6 +16,7 @@ a {
 }
 #headings {
 	text-align:center;
+	justify-content: space-evenly;
 }
 <!-- #s are for ids 
 p.class is for class-->
