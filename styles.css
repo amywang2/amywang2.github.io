@@ -16,6 +16,8 @@ a {
 }
 #headings {
 	text-align:center;
+	font-family: garamond;
+	font-size: 140%;
 }
 <!-- #s are for ids 
 p.class is for class-->
