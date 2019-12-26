@@ -13,18 +13,20 @@
 		  <a href="/commissions.html">Commissions</a>
 		</div>
 		<h1>Commissions</h1>
-		<form action="form_to_email.php" method="post" name="form">
-			Name:<br>
-			<input type="text" name="name" value="">
+		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+			Name:<br><input type="text" name="name" value="">
+			<span class="error">* <?php echo $nameErr;?></span>
 			<br>
-			Email:<br>
-			<input type="text" name="email" value="">
+			Email:<br><input type="text" name="email" value="">
+			<span class="error">* <?php echo $emailErr;?></span>
 			<br>
 			Subject:<br>
 			<input type="text" name="subject" value="">
 			<br>
 			Message:<br>
 			<textarea name="msg"></textarea>
+			<span class="error">* <?php echo $messageErr;?></span>
 			<br><br>
 			<input type="submit" value="Send" name="submit">
 		</form>
