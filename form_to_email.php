@@ -26,6 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	} else {
 		$message = test_input($_POST["msg"]);
 	}
+
+	$subject = $_POST["subject"];
+	header("Location:amywang2.github.io/commissions.html");
 } else {
 	echo "error; you need to submit the form!";
 }
@@ -43,5 +46,4 @@ $email_body = "New email from %name.\n"
 	"Message: $message"
 
 mail($email_to, $subject, $email_body);
-header("Location:amywang2.github.io/commissions.html");
 ?>
