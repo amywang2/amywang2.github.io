@@ -1,4 +1,5 @@
 <?php
+header("Location: commissions.html");
 $nameErr = $emailErr = $subjectErr = $messageErr = ""
 $name = $email = $subject = $message = ""
 
@@ -43,9 +44,4 @@ $email_body = "New email from %name.\n"
 	"Message: $message"
 
 mail($email_to, $subject, $email_body);
-}
-echo "<script>
-             alert('message sent succesfully'); 
-             window.history.go(-1);
-     </script>";
 ?>
