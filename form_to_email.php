@@ -1,5 +1,4 @@
 <?php
-header("Location: commissions.html");
 $nameErr = $emailErr = $subjectErr = $messageErr = ""
 $name = $email = $subject = $message = ""
 
@@ -44,4 +43,5 @@ $email_body = "New email from %name.\n"
 	"Message: $message"
 
 mail($email_to, $subject, $email_body);
+header("Location:amywang2.github.io/commissions.html");
 ?>
