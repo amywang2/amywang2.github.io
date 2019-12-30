@@ -19,5 +19,10 @@ a {
 	font-family: garamond;
 	font-size: 140%;
 }
+#gallery {
+	font-size: 150%;
+	background-color: LightGreen;
+	font-family: didot;
+}
 <!-- #s are for ids 
 p.class is for class-->
