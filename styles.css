@@ -24,5 +24,10 @@ a {
 	background-color: lightgreen;
 	font-family: didot;
 }
+.swipe {
+	overflow:auto;
+	white-space:nowrap;
+	width: 100px;
+}
 <!-- #s are for ids 
 p.class is for class-->
