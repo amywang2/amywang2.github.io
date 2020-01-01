@@ -29,5 +29,10 @@ a {
 	white-space:nowrap;
 	width: 100px;
 }
+.img{
+	width:200px;
+	height:200px;
+	object-fit:scale-down;
+}
 <!-- #s are for ids 
 p.class is for class-->
