@@ -20,9 +20,14 @@ a {
 	font-size: 140%;
 }
 #gallery {
+	width: 800px;
 	font-size: 150%;
 	background-color: lightgreen;
 	font-family: didot;
+	padding: 10px;
+	border: 5px solid lightgreen;
+	margin: 0;
+	display: inline-block;
 }
 .swipe {
 	overflow:auto;
