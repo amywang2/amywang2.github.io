@@ -8,6 +8,11 @@ div.transparent {
 	opacity: 0.6;
 	filter: alpha(opacity=60);
 }
+div.transparent h1, h2 {
+	margin: 5%;
+	color: white;
+	text-align: center
+	font-family: optima;
 #index {
 	background-image: url('/images/background.JPG');
 	background-attachment: absolute;
