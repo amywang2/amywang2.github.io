@@ -8,7 +8,7 @@ body {
 	background-position: center;
 }
 p {
-	font-family: courier;
+	font-family: times;
 	font-size: 160%;
 }
 a {
@@ -22,16 +22,22 @@ a {
 #gallery {
 	width: 800px;
 	font-size: 150%;
-	background-color: lightgreen;
+	background-color: lavender;
 	font-family: didot;
 	padding: 10px;
-	border: 5px solid lightgreen;
+	border: 5px solid lavender;
 	margin: auto;
 	display: inline-block;
 	text-align: center;
 }
 img {
 	height:220px;
+}
+#medias {
+	height:70px;
+}
+#largesize {
+	height:490px;
 }
 <!-- #s are for ids 
 p.class is for class-->
