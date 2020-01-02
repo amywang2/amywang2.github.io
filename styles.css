@@ -3,7 +3,7 @@ body {
 }
 #index {
 	background-image: url('/images/background.JPG');
-	background-attachment: fixed;
+	background-attachment: absolute;
 	background-repeat: no-repeat;
 	background-position: center;
 	height:600px;
