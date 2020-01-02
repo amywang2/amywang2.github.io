@@ -39,5 +39,14 @@ img {
 #largesize {
 	height:490px;
 }
+.slideshow {
+	width: 800px;
+	height:220px;
+	display: flex;
+	overflow-x: auto;
+}
+.slide {
+	flex-shrink:0;
+}
 <!-- #s are for ids 
 p.class is for class-->
