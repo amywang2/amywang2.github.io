@@ -49,12 +49,10 @@ img {
 }
 .slide {
 	flex-shrink:0;
-}
-.slides > div {
-	scroll-snap-align: start;
-}
-.slides {
 	scroll-behavior: smooth;
+}
+.slide > div {
+	scroll-snap-align: start;
 }
 <!-- #s are for ids 
 p.class is for class-->
