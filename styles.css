@@ -44,9 +44,17 @@ img {
 	height:220px;
 	display: flex;
 	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	scroll-snap-type: x mandatory;
 }
 .slide {
 	flex-shrink:0;
+}
+.slides > div {
+	scroll-snap-align: start;
+}
+.slides {
+	scroll-behavior: smooth;
 }
 <!-- #s are for ids 
 p.class is for class-->
