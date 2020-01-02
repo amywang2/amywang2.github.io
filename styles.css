@@ -55,5 +55,15 @@ img {
 .slide > div {
 	scroll-snap-align: start;
 }
+.column {
+	float: left;
+	width: 33.33%;
+	padding: 5px;
+}
+.row {
+	position: absolute;
+	right:0;
+	bottom:0;
+}
 <!-- #s are for ids 
 p.class is for class-->
