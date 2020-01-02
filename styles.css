@@ -6,7 +6,7 @@ body {
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: cover;
+	height:600px;
 }
 p {
 	font-family: times;
@@ -40,28 +40,20 @@ img {
 #largesize {
 	height:490px;
 }
-#slideshow {
+.slideshow {
+	width: 800px;
 	height:220px;
-	overflow: hidden;
-	margin: 0 auto;
-}
-.slide-wrapper {
-	width:2000px;
-	-webkit-animation: slide 18s ease infinite;
+	display: flex;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	scroll-snap-type: x mandatory;
 }
 .slide {
-	float: left;
-	height:300;
+	flex-shrink:0;
+	scroll-behavior: smooth;
 }
-@-webkit-keyframes slide {
-  20% {margin-left: 0px;}
-  30% {margin-left: -728px;}
-  50% {margin-left: -728px;}
-  60% {margin-left: -1456px;}
-  70% {margin-left: -1456px;}
-  80% {margin-left: -2184px;}
-  90% {margin-left: -2184px;}
+.slide > div {
+	scroll-snap-align: start;
 }
-
 <!-- #s are for ids 
 p.class is for class-->
