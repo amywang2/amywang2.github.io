@@ -12,7 +12,7 @@ div.opaque {
 	opacity: 1;
 	filter: alpha(opacity=100);
 	color: white;
-	text-align: center
+	text-align: center;
 	font-family: optima;	
 }
 #index {
