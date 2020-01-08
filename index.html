@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head>
 		<title>Amy Wang's Website</title>
 		<link rel="stylesheet" href="styles.css"
@@ -10,7 +11,7 @@
 			<a href="/index.html">Home</a>
 			<a href="/about.html">About</a>
 			<a href="/gallery.html">Gallery</a>
-			<a href="/commissions.html">Commissions</a>
+<!--			<a href="/commissions.html">Commissions</a>  -->
 			<a href="/photography.html">Photography</a>
 		</div>
 		<br>
@@ -31,56 +32,53 @@
 			<div class="slideshow">
 	
 				<div class="mySlides fade">
+					<div class="numbertext">1 / 7</div>
 					<a href="/photography.html">
-						<img src="/images/photography/portrait.jpg" style="width:100%">
+						<img src="/images/photography/portrait.jpg" style="height:100%">
 					</a>
 				</div>
 
 				<div class="mySlides fade">
+					<div class="numbertext">2 / 7</div>
 					<a href="/gallery.html#b&w">
-						<img src="/images/cat.png" style="width:100%">
+						<img src="/images/cat.png" style="height:100%">
 					</a>
 				</div>
 
 				<div class="mySlides fade">
+					<div class="numbertext">3 / 7</div>
 					<a href="/gallery.html#acrylic">
-						<img src="/images/pinkplants.JPG" style="width:100%">
+						<img src="/images/pinkplants.JPG" style="height:100%">
 					</a>
 				</div>
 
 				<div class="mySlides fade">
+					<div class="numbertext">4 / 7</div>
 					<a href="/photography.html">
-						<img src="/images/photography/shop.JPG" style="width:100%">
+						<img src="/images/photography/shop.JPG" style="height:100%">
 					</a>
 				</div>
 
 				<div class="mySlides fade">
+					<div class="numbertext">5 / 7</div>
 					<a href="/gallery.html#watercolor">
-						<img src="/images/watercolor2.JPG" style="width:100%">
+						<img src="/images/watercolor2.JPG" style="height:100%">
 					</a>
 				</div>
 
 				<div class="mySlides fade">
+					<div class="numbertext">6 / 7</div>
 					<a href="/gallery.html#misc">
-						<img src="/images/flower.JPG" style="width:100%">
+						<img src="/images/flower.JPG" style="height:100%">
 					</a>
 				</div>
 
 				<div class="mySlides fade">
+					<div class="numbertext">7 / 7</div>
 					<a href="/gallery.html#watercolor">
-						<img src="/images/grapes.JPG" style="width:100%">
+						<img src="/images/grapes.JPG" style="height:100%">
 					</a>
 				</div>
-			</div>
-
-			<div style="text-align: center">
-				<span class="dot"></span>
-				<span class="dot"></span>
-				<span class="dot"></span>
-				<span class="dot"></span>
-				<span class="dot"></span>
-				<span class="dot"></span>
-				<span class="dot"></span>
 			</div>
 
 		</center>
@@ -109,17 +107,12 @@
 			function showSlides() {
 				var i;
 				var slides = document.getElementsByClassName("mySlides");
-				var dots = document.getElementsByClassName("dot");
 				for (i = 0; i < slides.length; i++) {
 					slides[i].style.display = "none";  
 				}
 				slideIndex++;
 				if (slideIndex > slides.length) {slideIndex = 1}    
-				for (i = 0; i < dots.length; i++) {
-					dots[i].className = dots[i].className.replace(" active", "");
-				}
 				slides[slideIndex-1].style.display = "block";  
-				dots[slideIndex-1].className += " active";
 				setTimeout(showSlides, 4000); // Change image every 4 seconds
 			}
 		</script>
