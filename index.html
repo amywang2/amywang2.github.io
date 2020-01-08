@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
-		<script>
-				var slideIndex = 0;
-				showSlides();
-
-				function showSlides() {
-					var i;
-					var slides = document.getElementsByClassName("mySlides");
-					for (i = 0; i < slides.length; i++) {
-						slides[i].style.display = "none";
-					}
-					slideIndex++;
-					if (slideIndex > slides.length) {slideIndex = 1}
-					slides[slideIndex-1].style.display = "block";
-					setTimeout(showSlides, 2000); // Change image every 2 seconds
-				}
-		</script>
-
 		<title>Amy Wang's Website</title>
 		<link rel="stylesheet" href="styles.css"
 	</head>
@@ -49,48 +32,55 @@
 	
 				<div class="mySlides fade">
 					<a href="/photography.html">
-						<img src="/images/photography/portrait.jpg" alt="In the sun">
+						<img src="/images/photography/portrait.jpg" style="width:100%">
 					</a>
 				</div>
 
 				<div class="mySlides fade">
 					<a href="/gallery.html#b&w">
-						<img src="/images/cat.png" alt="Kitten">
+						<img src="/images/cat.png" style="width:100%">
 					</a>
 				</div>
 
 				<div class="mySlides fade">
 					<a href="/gallery.html#acrylic">
-						<img src="/images/pinkplants.JPG" alt="Plants in a pink hue">
+						<img src="/images/pinkplants.JPG" style="width:100%">
 					</a>
 				</div>
 
 				<div class="mySlides fade">
 					<a href="/photography.html">
-						<img src="/images/photography/shop.JPG" alt="Colorful shop">
+						<img src="/images/photography/shop.JPG" style="width:100%">
 					</a>
 				</div>
 
 				<div class="mySlides fade">
 					<a href="/gallery.html#watercolor">
-						<img src="/images/watercolor2.JPG" alt="Trees by a river">
+						<img src="/images/watercolor2.JPG" style="width:100%">
 					</a>
 				</div>
 
 				<div class="mySlides fade">
 					<a href="/gallery.html#misc">
-						<img src="/images/flower.JPG" alt="Macro flower">
+						<img src="/images/flower.JPG" style="width:100%">
 					</a>
 				</div>
 
 				<div class="mySlides fade">
 					<a href="/gallery.html#watercolor">
-						<img src="/images/grapes.JPG" alt="Watercolor grapes">
+						<img src="/images/grapes.JPG" style="width:100%">
 					</a>
 				</div>
+			</div>
 
-				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			<div style="text-align: center">
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
 			</div>
 
 		</center>
@@ -111,5 +101,28 @@
 				</a>
 			</div>
 		</div>
+
+		<script>
+			var slideIndex = 0;
+			showSlides();
+
+			function showSlides() {
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				var dots = document.getElementsByClassName("dot");
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";  
+				}
+				slideIndex++;
+				if (slideIndex > slides.length) {slideIndex = 1}    
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "block";  
+				dots[slideIndex-1].className += " active";
+				setTimeout(showSlides, 4000); // Change image every 4 seconds
+			}
+		</script>
+
 	</body>
 </html>
