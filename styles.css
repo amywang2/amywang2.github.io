@@ -3,9 +3,15 @@ body {
 	background-color: white;
 }
 #headings {
-	text-align: right;
 	font-family: herman;
 	font-size: 140%;
+	float: right;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+}
+.dropdown {
+	float: right;
 }
 .dropdown-content {
   display: none;
@@ -23,6 +29,7 @@ body {
 }
 .dropdown-content a:hover {background-color: #ddd;}
 .dropdown:hover .dropdown-content {display: block;}
+
 /* Homepage */ 
 div.transparent {
 	margin: 10% 30%;
