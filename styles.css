@@ -91,10 +91,10 @@ img {
 	opacity: 1.0;
 	filter: alpha(opacity=100);
 }
-img:hover {
+/*img:hover {
 	opacity: 0.5;
 	filter: alpha(opacity=50);
-}
+}*/
 
 /* specifics */
 
@@ -112,21 +112,26 @@ img:hover {
 #medias {
 	height:50px;
 }
-#largesize {
-	height:490px;
-}
 .slideshowimgs {
 	height: 400px;
 }
 .column {
 	float: left;
-	width: 33.33%;
-}
-.row {
-	position: fixed;
-	right:0;
-	bottom:0;
+	padding: 10px;
 }
 
+.left {
+	width: 50%;
+}
+
+.right {
+	width: 50%;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
 /* #s are for ids 
 p.class is for class */
