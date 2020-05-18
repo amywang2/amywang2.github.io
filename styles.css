@@ -165,19 +165,21 @@ img {
 .text {
 	font-size: 100%;
 }
-.box {
+.square {
 	position: relative;
 	display: inline-block; /*box width same as image*/
+	margin: 5% 10%;
 }
-.box .text {
+.square .categories {
 	position: absolute;
 	margin: 0 auto;
 	left: 0;
 	right: 0;
 	text-align: center;
-	top: 40%;
-	color: black;
+	top: 30%;
+	color: white;
 	width: 60%;
+	font-family: book antiqua;
 }
 @media screen and (max-width: 600px) {
     .column {
@@ -194,6 +196,10 @@ img {
 	float: left;
 	text-align: center;
 	color: white;
-
+}
+.typetext {
+	border-bottom: 2px solid steelblue;
+	padding-bottom: 5px;
+}
 /* #s are for ids 
 p.class is for class */
