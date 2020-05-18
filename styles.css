@@ -7,11 +7,22 @@ body {
 	font-size: 120%;
 	float: right;
 	color: black;
-	padding: 14px;
 }
 #headings > a {
-	padding-right: 10px;
-	padding-left: 10px;
+	padding: 14px 10px;
+}
+.dropdown {
+	float: right;
+	overflow: hidden;
+}
+.dropdown .dropbtn {
+	font-size: 120%;
+	border: none;
+	outline: none;
+	color: black;
+	padding: 14px 10px;
+	font-family: inherit;
+	margin: 0;
 }
 .dropdown-content {
   display: none;
@@ -26,6 +37,7 @@ body {
   padding: 7px 14px;
   text-decoration: none;
   display: block;
+	text-align: left;
 }
 .dropdown-content a:hover {background-color: #ddd;}
 .dropdown:hover .dropdown-content {display: block;}
