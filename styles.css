@@ -165,6 +165,20 @@ img {
 .text {
 	font-size: 100%;
 }
+.box {
+	position: relative;
+	display: inline-block; /*box width same as image*/
+}
+.box .text {
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	top: 40%;
+	color: black;
+	width: 60%;
+}
 @media screen and (max-width: 600px) {
     .column {
         width: 100%;
