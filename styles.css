@@ -21,6 +21,7 @@ body {
 	outline: none;
 	padding: inherit;
 	font-family: inherit;
+	background-color: inherit;
 }
 .dropdown-content {
   display: none;
