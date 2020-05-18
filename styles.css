@@ -139,9 +139,26 @@ img {
 }
 
 #aboutpic {
-	width: 75%;
+	width: 80%;
 	height: auto;
-	padding: 10%;
+	padding: 5%;
+}
+#aboutpic2 {
+	padding-right: 5%;
+	width: 100%;
+	height: auto;
+}
+#about {
+	color: #224569;
+	font-size: 130%;
+}
+.text {
+	font-size: 100%;
+}
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
 }
 /* #s are for ids 
 p.class is for class */
