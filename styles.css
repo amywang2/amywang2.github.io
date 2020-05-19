@@ -196,5 +196,9 @@ img {
 	border-bottom: 2px solid steelblue;
 	padding-bottom: 5px;
 }
+.map {
+	height: 600px;
+	width: 100%;
+}
 /* #s are for ids 
 p.class is for class */
