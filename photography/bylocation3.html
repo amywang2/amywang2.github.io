@@ -2,11 +2,11 @@
 <html lang="en-US">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head>
-		<title>Photography</title>
+		<title>A Leaflet map!</title>
 		<link rel="shortcut icon" type="image/jpg" href="/images/logo.jpg">
 		<link rel="stylesheet" href="styles.css">
-		<link rel="stylesheet" href="./Leaflet-1.0.3/leaflet.css"/>
-		<script src="./Leaflet-1.0.3/leaflet.js"></script>
+		<link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.css" />
+		<script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7.3/leaflet.js"></script>
 	</head>
 	<body>
 
@@ -32,21 +32,17 @@
 			</div>
 		</div>
 
-  <div class="map"></div>
+		<div class="map"></div>
 
 		<script>
-
-			// initialize the map
 			var map = L.map('map').setView([34.886, -4.922], 2);
 
-			// load a tile layer
 			L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
 				{
 					attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
 					maxZoom: 17,
 					minZoom: 2
 				}).addTo(map);
-
 		</script>
 	</body>
 </html>
