@@ -1,39 +1,33 @@
-function get_map()
-{	var map = L.map('map', { scrollWheelZoom: false }).setView([51.9467, 1.2879], 16);
-	
-	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-	}).addTo(map);
-	
-	var MarkerIcon = L.icon({ iconUrl: '/images/mapmarker.png', iconSize: [18, 30], iconAnchor: [9, 30], popupAnchor: [0, -20] });
-	
-	var GreatWall = L.marker([40.432, 116.57], { icon: MarkerIcon }).addTo(map);
-	GreatWall.bindPopup("<a href='/photography/greatwall.html'>Great Wall of China</a>");
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <style>
+      .map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+    <title>OpenLayers example</title>
+  </head>
+  <body>
+    <h2>My Map</h2>
+    <div class="map"></div>
+    <script type="text/javascript">
+			import Map from 'ol/Map';
+			import View from 'ol/View';
+			import OSM from 'ol/source/OSM';
+			import TileLayer from 'ol/layer/Tile';
 
-/*	var Globemarker = L.marker([51.94797, 1.28734], { icon: MarkerIcon }).addTo(map);
-	Globemarker.bindPopup("<b>The Globe</b><br>Pub (open)<br><a href='globe.html'>Trail Page</a>");
-	var Angelmarker = L.marker([51.94819, 1.28709], { icon: MarkerIcon }).addTo(map);
-	Angelmarker.bindPopup("<b>The Angel</b><br>Pub (closed)<br><a href='angel.html'>Trail Page</a>");
-	var Halfmoonmarker = L.marker([51.94731, 1.28725], { icon: MarkerIcon }).addTo(map);
-	Halfmoonmarker.bindPopup("<b>The Half Moon</b><br>Pub (closed)<br><a href='halfmoon.html'>Trail Page</a>");
-	var Swanmarker = L.marker([51.94715, 1.28667], { icon: MarkerIcon }).addTo(map);
-	Swanmarker.bindPopup("<b>The New Swan</b><br>Pub (closed)<br><a href='swan.html'>Trail Page</a>");
-*/
-	map.on('click', zoomToggle);
-	function zoomToggle()
-	{	if (map.scrollWheelZoom.enabled())
-		{	map.scrollWheelZoom.disable();
-		}
-		else
-		{   map.scrollWheelZoom.enable();
-		}
-	}
-	var popup = L.popup();
-	function onMapClick(e) {
-		popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
-	}
-	map.on('click', onMapClick); 
-}
+			new Map({
+				layers: [
+					new TileLayer({source: new OSM()})
+				],
+				view: new View({
+					center: [0, 0],
+					zoom: 2
+				}),
+				target: 'map'
+			});
+    </script>
+  </body>
+</html>
