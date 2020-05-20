@@ -49,23 +49,6 @@
           zoom: 2
         })
       });
-			var icon = new ol.Feature({
-				geometry: new ol.geom.Point(ol.proj.transform([116.557, 40.436]))
-			});
-			var iconLayerSource = new ol.source.Vector({
-				features: [icon]
-			});
-			var iconLayer = new ol.layer.Vector({
-				source: iconLayerSource,
-				style: new ol.style.Style({
-				image: new ol.style.Icon({ 
-					src:'/images/mapmarker.png'
-					anchor: [0.5, 1],
-					scale: 0.5
-				}),
-				}),
-			});
-			map.addLayer(iconLayer);
     </script>
   </body>
 </html>
