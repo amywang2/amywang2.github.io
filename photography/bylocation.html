@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
 	</head>
-	<body onload="initialize_map); add_map_point(-33.8688, 151.2093);">>
+	<body onload="initialize_map(); add_map_point(-33.8688, 151.2093);">
 
 		<div id="headings">
 			<a href="/index.html">HOME</a>
@@ -34,18 +34,20 @@
     <div class="map"></div>
 
     <script type="text/javascript">
-      var map = new ol.Map({
-        target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          })
-        ],
-        view: new ol.View({
-          center: ol.proj.fromLonLat([-4.922, 34.886]),
-          zoom: 2
-        })
-      });
+			function initialize_map() {
+				var map = new ol.Map({
+					target: 'map',
+					layers: [
+						new ol.layer.Tile({
+							source: new ol.source.OSM()
+						})
+					],
+					view: new ol.View({
+						center: ol.proj.fromLonLat([-4.922, 34.886]),
+						zoom: 2
+					})
+				});
+			}
 			function add_map_point(lat, lng) {
 				var vectorLayer = new ol.layer.Vector({
 					source:new ol.source.Vector({
