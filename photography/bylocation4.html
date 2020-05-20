@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-US">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <head>
+    <title>Photography</title>
+		<link rel="shortcut icon" type="image/jpg" href="/images/logo.jpg">
+		<link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css">
-    <style>
-      .map {
-        height: 400px;
-        width: 100%;
-      }
-    </style>
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
-    <title>OpenLayers example</title>
   </head>
   <body>
     <h2>My Map</h2>
-    <div id="map" class="map"></div>
+    <div class="map"></div>
     <script type="text/javascript">
       var map = new ol.Map({
         target: 'map',
