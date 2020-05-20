@@ -197,8 +197,8 @@ img {
 	padding-bottom: 5px;
 }
 .typepic {
-	height: 20%;
-	width: auto;
+	width: 100%
+	height: auto;
 }
 .map {
 	height: 600px;
