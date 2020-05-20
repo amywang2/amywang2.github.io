@@ -32,7 +32,7 @@
 		</div>
 
 		<center>
-			<h2>PHOTOGRAPHY (LOCATION)</h2>
+			<h1 class="typetext">PHOTOGRAPHY (LOCATION)</h1>
 			<div id="map" class="map"></div>
 		</center>
 
@@ -45,10 +45,27 @@
           })
         ],
         view: new ol.View({
-          center: ol.proj.fromLonLat([-4.922, 32.886]),
+          center: ol.proj.fromLonLat([18.281, 32.547]),
           zoom: 2
         })
       });
+			var icon = new olFeature({
+				geometry: new ol.geom.Point(ol.proj.transform([116.557, 40.436]))
+			});
+			var iconLayerSource = new ol.source.Vector({
+				features: [icon]
+			});
+			var iconLayer = new ol.layer.Vector({
+				source: iconLayerSource,
+				style: new ol.style.Style({
+					image: new ol.style.Icon({ 
+						src:'/images/mapmarker.png'
+						anchor: [0.5, 1],
+						scale: 0.5
+					}),
+				})
+			});
+			map.addLayer(iconLayer);
     </script>
   </body>
 </html>
