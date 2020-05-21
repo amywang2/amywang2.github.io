@@ -55,21 +55,48 @@
       });
 			var vectorLayer = new ol.layer.Vector("Overlay");
 			
-			var feature = new OpenLayers.Feature.Vector(
+			var feature = new ol.Feature.Vector(
 				new ol.geom.Point(40.436, 116.557).transform(epsg4326, projectTo),
-					{description: Great Wall of China"},
+					{description: "Great Wall of China"},
 					{externalGraphic: 'images/mapmarker.png', graphicHeight:25, graphicWidth: 21,
 					graphicXOffset:-12, graphicYOffset:-25}
 			);
 			vectorLayer.addFeatures(feature);
 
-			var feature = new OpenLayers.Feature.Vector(
+			var feature = new ol.Feature.Vector(
 				new ol.geom.Point(41.89, 12.492).transform(epsg4326, projectTo),
 					{description: "Colosseum"},
 					{externalGraphic: 'images/mapmarker.png', graphicHeight:25, graphicWidth: 21,
 					graphicXOffset:-12, graphicYOffset:-25}
 			);
 			vectorLayer.addFeatures(feature);
+			
+			map.addLayer(vectorLayer);
+
+			var controls = {
+				selector: new OpenLayers.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
+			};
+
+			function createPopup(feature) {
+				feature.popup = new ol.Popup.FramedCloud("pop",
+						feature.geometry.getBounds().getCenterLonLat(),
+						null,
+						'<div class="markerContent">'+feature.attributes.description+'</div>',
+						null,
+						true,
+						function() { controls['selector'].unselectAll(); }
+				);
+				//feature.popup.closeOnMove = true;
+				map.addPopup(feature.popup);
+			}
+
+			function destroyPopup(feature) {
+				feature.popup.destroy();
+				feature.popup = null;
+			}
+			
+			map.addControl(controls['selector']);
+			controls['selector'].activate();
     </script>
   </body>
 </html>
