@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head><title>OpenLayers Marker Popups</title></head>
-  <body>
+  <head>
+		<title>OpenLayers Marker Popups</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.11/lib/OpenLayers.js"></script> 
+</head>
+<body>
   <div id="mapdiv"></div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.11/lib/OpenLayers.js"></script> 
   <script>
     map = new OpenLayers.Map("mapdiv");
     map.addLayer(new OpenLayers.Layer.OSM());
@@ -41,11 +43,8 @@
         );    
     vectorLayer.addFeatures(feature);
 
-   
     map.addLayer(vectorLayer);
  
-    
-    //Add a selector control to the vectorLayer with popup functions
     var controls = {
       selector: new OpenLayers.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
     };
@@ -73,4 +72,5 @@
       
   </script>
   
-</body></html>
+</body>
+</html>
