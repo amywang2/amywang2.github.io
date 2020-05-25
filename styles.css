@@ -200,7 +200,7 @@ img {
 	width: 100%
 	height: auto;
 }
-.map {
+#map {
 	height: 600px;
 	width: 80%;
 }
