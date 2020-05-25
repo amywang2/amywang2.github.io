@@ -33,7 +33,7 @@
 
 		<center>
 			<h1 class="typetext">PHOTOGRAPHY (LOCATION)</h1>
-			<div id="map" class="map"></div>
+			<div id="map"></div>
 		</center>
 
     <script type="text/javascript">
@@ -53,40 +53,25 @@
         })
       });
 
-			var vectorLayer = new ol.layer.Vector("Overlay");
-
-			var feature = new ol.feature.Vector(
-				new ol.geom.Point(40.436, 116.557).transform(epsg4326, projectTo),
-				{description: 'Great Wall of China'},
-				{externalGraphic: '/images/mapmarker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset: -12, graphicYOffset:-25}
-			);
-			vectorLayer.addFeatures(feature);
-			map.addLayer(vectorLayer);
-	 
-			var controls = {
-				selector: new OpenLayers.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
-			};
-
-			function createPopup(feature) {
-				feature.popup = new OpenLayers.Popup.FramedCloud("pop",
-					feature.geometry.getBounds().getCenterLonLat(),
-					null,
-					'<div class="markerContent">'+feature.attributes.description+'</div>',
-					null,
-					true,
-					function() { controls['selector'].unselectAll(); }
-				);
-				//feature.popup.closeOnMove = true;
-				map.addPopup(feature.popup);
-			}
-
-			function destroyPopup(feature) {
-				feature.popup.destroy();
-				feature.popup = null;
-			}
+			function add_map_point(lat, lng) {
+				var vectorLayer = new ol.layer.Vector({
+					source:new ol.source.Vector({
+						features: [new ol.Feature({
+							geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857')),
+						})]
+					}),
+					style: new ol.style.Style({
+						image: new ol.style.Icon({
+							anchor: [0, 0],
+							scale: 0.05,
+							src: "/images/mapmarker.png"
+						})
+					})
+				});
 			
-			map.addControl(controls['selector']);
-			controls['selector'].activate();
+			map.addLayer(vectorLayer);
+			}
+
     </script>
   </body>
 </html>
