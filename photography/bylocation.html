@@ -50,11 +50,13 @@
         })
       });
 
-			function add_map_point(lat, lng) {
+			function add_map_point(lat, lng, des) {
 				var vectorLayer = new ol.layer.Vector({
 					source:new ol.source.Vector({
 						features: [new ol.Feature({
 							geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857')),
+							{description:String(des)},
+							{externalGraphic: '/images/mapmarker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25}
 						})]
 					}),
 					style: new ol.style.Style({
@@ -69,6 +71,30 @@
 			map.addLayer(vectorLayer);
 			}
 
+			var controls = {
+				selector: new OpenLayers.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
+			};
+
+			function createPopup(feature) {
+				feature.popup = new OpenLayers.Popup.FramedCloud("pop",
+					feature.geometry.getBounds().getCenterLonLat(),
+					null,
+					'<div class="markerContent">'+feature.attributes.description+'</div>',
+					null,
+					true,
+					function() { controls['selector'].unselectAll(); }
+				);
+				//feature.popup.closeOnMove = true;
+				map.addPopup(feature.popup);
+			}
+
+			function destroyPopup(feature) {
+				feature.popup.destroy();
+				feature.popup = null;
+			}
+			
+			map.addControl(controls['selector']);
+			controls['selector'].activate();
     </script>
   </body>
 </html>
