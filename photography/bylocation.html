@@ -7,8 +7,8 @@
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
     <title>Photography</title>
   </head>
-  <body onload="add_map_point(40.436, 116.557);
-	add_map_point(41.89, 12.492);">
+  <body onload="add_map_point(40.436, 116.557,"Great Wall");
+	add_map_point(41.89, 12.492, "Colosseum");">
 
 		<div id="headings">
 			<a href="/index.html">HOME</a>
@@ -56,7 +56,7 @@
 						features: [new ol.Feature({
 							geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857')),
 							{description:String(des)},
-							{externalGraphic: '/images/mapmarker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25}
+							{externalGraphic: '/images/mapmarker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25},
 						})]
 					}),
 					style: new ol.style.Style({
