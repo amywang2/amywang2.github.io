@@ -48,3 +48,52 @@
           center: ol.proj.fromLonLat([18.281, 32.547]),
           zoom: 2
         })
+      });
+
+			function add_map_point(lat, lng, des) {
+				var vectorLayer = new ol.layer.Vector({
+					source:new ol.source.Vector({
+						features: [new ol.Feature({
+							geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857')),
+						})]
+					}),
+					description:[String(des)],
+					style: new ol.style.Style({
+						image: new ol.style.Icon({
+							anchor: [0, 0],
+							scale: 0.05,
+							src: "/images/mapmarker.png"
+						})
+					})
+				});
+			
+			map.addLayer(vectorLayer);
+			}
+
+			var controls = {
+				selector: new ol.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
+			};
+
+			function createPopup(feature) {
+				feature.popup = new ol.Popup.FramedCloud("pop",
+					feature.geometry.getBounds().getCenterLonLat(),
+					null,
+					'<div class="markerContent">'+feature.attributes.description+'</div>',
+					null,
+					true,
+					function() { controls['selector'].unselectAll(); }
+				);
+				//feature.popup.closeOnMove = true;
+				map.addPopup(feature.popup);
+			}
+
+			function destroyPopup(feature) {
+				feature.popup.destroy();
+				feature.popup = null;
+			}
+			
+			map.addControl(controls['selector']);
+			controls['selector'].activate();
+    </script>
+  </body>
+</html>
