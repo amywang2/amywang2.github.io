@@ -71,11 +71,11 @@
 			}
 
 			var controls = {
-				selector: new OpenLayers.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
+				selector: new ol.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
 			};
 
 			function createPopup(feature) {
-				feature.popup = new OpenLayers.Popup.FramedCloud("pop",
+				feature.popup = new ol.Popup.FramedCloud("pop",
 					feature.geometry.getBounds().getCenterLonLat(),
 					null,
 					'<div class="markerContent">'+feature.attributes.description+'</div>',
