@@ -15,12 +15,13 @@
 
 		 [ '51.3971',  '-2.34538', '<div class="map-popup"><p>Lambridge Buildings, BATH, Somerset, BA1 6RS</p></div>'] ,
 		]
-    var center = ol.proj.fromLonLat([-2.36, 51.391]);
+    var center = ol.proj.fromLonLat([18.281, 32,547]);
 
     var view = new ol.View({
       center: center,
-      zoom: 10 // 5
+      zoom: 2 
     });
+
     var features = [];
     for (var i = 0; i < houses.length; i++) {
         var item = houses[i]; 
@@ -37,11 +38,8 @@
         anchorXUnits: 'fraction',
         anchorYUnits: 'fraction',
         opacity: 0.75,
-        src: 'https://example.com/themes/pheads/resources/img/icons/pointer_original.svg',
-        color: '#8959A8',
-          crossOrigin: 'anonymous',
-          imgSize:[120,120],
-          scale:0.25
+        src: '/images/mapmarker.png',
+				scale:0.25
       }))
     }); 
 
