@@ -55,13 +55,6 @@
 			);    
 			vectorLayer.addFeatures(feature);
 			
-			var feature = new OpenLayers.Feature.Vector(
-				new OpenLayers.Geometry.Point(41.89, 12.492).transform(epsg4326, projectTo),
-				{description:'Colosseum'},
-				{externalGraphic: '/images/mapmarker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25}
-			);    
-			vectorLayer.addFeatures(feature);
-		 
 			map.addLayer(vectorLayer);
 	 
 			var controls = {
