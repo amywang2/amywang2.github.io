@@ -196,9 +196,10 @@ img {
 	border-bottom: 2px solid steelblue;
 	padding-bottom: 5px;
 }
-.typepic {
-	width: 100%
+.type {
+	width: 80%;
 	height: auto;
+	padding: 5%;
 }
 #map {
 	height: 600px;
