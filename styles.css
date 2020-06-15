@@ -6,6 +6,8 @@ body {
 	font-family: herman;
 	font-size: 120%;
 	float: right;
+}
+#headings, #headings:visited {
 	color: black;
 }
 #headings > a {
