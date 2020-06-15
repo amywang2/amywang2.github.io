@@ -24,10 +24,17 @@
           })
         ],
         view: new ol.View({
-          center: ol.proj.fromLonLat([37.41, 8.82]),
-          zoom: 4
+          center: ol.proj.fromLonLat([32.41, 12.82]),
+          zoom: 2
         })
       });
+			var markers = new ol.layer.Markers("Markers");
+			map.addLayer(markers);
+
+			var size = new ol.Size(21,25);
+			var offset = new ol.Pixel(-(size.w/2), -size.h);
+			var icon = new ol.Icon('/images/mapmarker.png', size, offset);
+			markers.addMarker(new ol.Marker(new ol.LonLat(32.41, 12.82), icon));
     </script>
   </body>
 </html>
