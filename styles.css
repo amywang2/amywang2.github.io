@@ -6,8 +6,9 @@ body {
 	font-family: herman;
 	font-size: 120%;
 	float: right;
+	color: black;
 }
-#headings, #headings:visited {
+#headings:visited {
 	color: black;
 }
 #headings > a {
