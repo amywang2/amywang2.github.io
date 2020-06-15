@@ -130,6 +130,10 @@ img {
 	padding: 10px;
 }
 
+.smlclm {
+	float: left;
+	padding: 2px;
+}
 .left {
 	width: 50%;
 }
