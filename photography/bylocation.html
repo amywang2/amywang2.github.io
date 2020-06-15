@@ -15,6 +15,10 @@
   <body>
     <h2>My Map</h2>
     <div id="map" class="map"></div>
+		<div id="popup" class="ol-popup">
+			<a href="#" id="popup-closer" class="ol-popup-closer"></a>
+			<div id="popup-content"></div>
+		</div>
     <script type="text/javascript">
       var map = new ol.Map({
         target: 'map',
@@ -28,13 +32,53 @@
           zoom: 2
         })
       });
-			var markers = new ol.layer.Markers("Markers");
-			map.addLayer(markers);
 
-			var size = new ol.Size(21,25);
-			var offset = new ol.Pixel(-(size.w/2), -size.h);
-			var icon = new ol.Icon('/images/mapmarker.png', size, offset);
-			markers.addMarker(new ol.Marker(new ol.LonLat(32.41, 12.82), icon));
+			var layer = new ol.layer.Vector({
+				source: new ol.source.Vector({
+					features: [
+						new ol.Feature({
+							geometry: new ol.geom.Point(ol.proj.fromLonLat([4.35, 50.85]))
+						})
+					],
+					style: new ol.style.Style({
+						image: new ol.style.Icon({
+							src: '/images/mapmarker.png'
+						})
+					})
+				})
+			});
+			map.addLayer(layer);
+
+			var container = document.getElementById('popup');
+			var content = document.getElementById('popup-content');
+			var closer = document.getElementById('popup-closer');
+
+			var overlay = new ol.Overlay({
+				element: container, 
+				autoPan: true,
+				autoPanAnimation: {
+					duration: 250
+				}
+			});
+			map.addOverlay(overlay);
+
+			closer.onclick = function() {
+				overlay.setPosition(undefined);
+				closer.blur();
+				return false;
+			};
+
+		 map.on('singleclick', function (event) {
+				 if (map.hasFeatureAtPixel(event.pixel) === true) {
+						 var coordinate = event.coordinate;
+
+						 content.innerHTML = '<b>Hello world!</b><br />I am a popup.';
+						 overlay.setPosition(coordinate);
+				 } else {
+						 overlay.setPosition(undefined);
+						 closer.blur();
+				 }
+		 });
     </script>
   </body>
 </html>
