@@ -38,7 +38,7 @@
 						})
 					],
 					view: new ol.View({
-						center: ol.proj.fromLonLat([32.41, 12.82]),
+						center: ol.proj.fromLonLat([39.825, 18.639]),
 						zoom: 2
 					})
 				});
@@ -47,14 +47,9 @@
 					source: new ol.source.Vector({
 						features: [
 							new ol.Feature({
-								geometry: new ol.geom.Point(ol.proj.fromLonLat([4.35, 50.85]))
+								geometry: new ol.geom.Point(ol.proj.fromLonLat([12.49, 41.89]))
 							})
-						],
-						style: new ol.style.Style({
-							image: new ol.style.Icon({
-								src: '/images/mapmarker.png'
-							})
-						})
+						]
 					})
 				});
 				map.addLayer(layer);
@@ -82,7 +77,7 @@
 					 if (map.hasFeatureAtPixel(event.pixel) === true) {
 							 var coordinate = event.coordinate;
 
-							 content.innerHTML = '<b>Hello world!</b><br />I am a popup.';
+							 content.innerHTML = '<b>The Colosseum</b>';
 							 overlay.setPosition(coordinate);
 					 } else {
 							 overlay.setPosition(undefined);
