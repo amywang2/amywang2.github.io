@@ -8,7 +8,7 @@ body {
 	float: right;
 	color: black;
 }
-#headings:visited {
+#headings > a:visited {
 	color: black;
 }
 #headings > a {

@@ -1,81 +1,27 @@
-<!doctype html>
-<html lang="en">
-  <head>
-		<link rel="stylesheet" href="/styles.css">
-		<link rel="shortcut icon" type="image/jpg" href="/images/logo.jpg">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.11/lib/OpenLayers.js"></script> 
-    <title>Photography</title>
-  </head>
-  <body>
-
-		<div id="headings">
-			<a href="/index.html">HOME</a>
-			<a href="/about.html">ABOUT</a>
-			<a href="/gallery.html">GALLERY</a>
-			<div class="dropdown">
-				<button class="dropbtn">PHOTOGRAPHY</button>
-				<div class="dropdown-content">
-					<a href="/photography/bytype.html">by type</a>
-					<a href="/photography/bylocation.html">by location</a>
-				</div>
-			</div>
-		</div>
-
-		<center>
-			<h1 class="typetext">PHOTOGRAPHY (LOCATION)</h1>
-			<div id="map"></div>
-		</center>
-
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#map {
+				width: 100%;
+				height: 400px;
+				background-color: grey;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Map</h3>
+		<div id="map"></div>
 		<script>
-			map = new OpenLayers.Map("map");
-			map.addLayer(new OpenLayers.Layer.OSM());
-			
-			epsg4326 =  new OpenLayers.Projection("EPSG:4326"); //WGS 1984 projection
-			projectTo = map.getProjectionObject(); //The map projection (Spherical Mercator)
-		 
-			var lonLat = new OpenLayers.LonLat(18.281, 32.547).transform(epsg4326, projectTo);
-						
-			var zoom=2;
-			map.setCenter (lonLat, zoom);
-
-			var vectorLayer = new OpenLayers.Layer.Vector("Overlay");
-			
-			var feature = new OpenLayers.Feature.Vector(
-				new OpenLayers.Geometry.Point(40.436, 116.557).transform(epsg4326, projectTo),
-				{description:'Great Wall of China'},
-				{externalGraphic: '/images/mapmarker.png', graphicHeight: 25, graphicWidth: 21, graphicXOffset:-12, graphicYOffset:-25}
-			);    
-			vectorLayer.addFeatures(feature);
-			
-			map.addLayer(vectorLayer);
-	 
-			var controls = {
-				selector: new OpenLayers.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
-			};
-
-			function createPopup(feature) {
-				feature.popup = new OpenLayers.Popup.FramedCloud("pop",
-					feature.geometry.getBounds().getCenterLonLat(),
-					null,
-					'<div class="markerContent">'+feature.attributes.description+'</div>',
-					null,
-					true,
-					function() { controls['selector'].unselectAll(); }
-				);
-				//feature.popup.closeOnMove = true;
-				map.addPopup(feature.popup);
+			function initMap() {
+				var center = {lat:32.547, 18.281};
+				var map = new google.maps.Map(
+					document.getElementById('map'), {zoom: 2, center: center});
+				var marker1 = new google.maps.Marker({position: center, map: map});
 			}
-
-			function destroyPopup(feature) {
-				feature.popup.destroy();
-				feature.popup = null;
-			}
-			
-			map.addControl(controls['selector']);
-			controls['selector'].activate();
-				
 		</script>
-  
-</body>
+		<script async defer
+		src="https://www.google.com/maps/embed/v1/MODE?key=AIzaSyDgDa1TaL676K9fIHnYM9lS36ad232bnbY&parameters">
+		</script>
+	</body>
 </html>
-    
