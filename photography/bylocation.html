@@ -53,10 +53,11 @@
 					name: 'Great Wall of China',
 					link: '/photography/greatwall.html'
 				});
-				var iconStyle = new ol.style.Icon({
-					anchor: [0.5, 0.5],
-					scale: 1.0,
-					src: '/images/mapmarker.png'
+				var iconStyle = new ol.style.Style({
+					image: new ol.style.Icon(({
+						crossOrigin: 'anonymous',
+						src: '/images/mapmarker.png'
+					}))
 				});
 				
 				colosseum.setStyle(iconStyle);
