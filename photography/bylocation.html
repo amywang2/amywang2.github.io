@@ -38,7 +38,7 @@
 						})
 					],
 					view: new ol.View({
-						center: ol.proj.fromLonLat([39.825, 18.639]),
+						center: ol.proj.fromLonLat([28.825, 15.639]),
 						zoom: 2
 					})
 				});
@@ -53,6 +53,18 @@
 					name: 'Great Wall of China',
 					link: '/photography/greatwall.html'
 				});
+				var iconStyle = new ol.Style({
+					image: new ol.Icon({
+						anchor: [0.5, 46],
+						anchorXUnits: 'fraction', 
+						anchorYUnits: 'pixels',
+						src: '/images/mapmarker.png'
+					})
+				});
+				
+				colosseum.setStyle(iconStyle);
+				greatwall.setStyle(iconStyle);
+
 				var layer = new ol.layer.Vector({
 					source: new ol.source.Vector({
 						features: [colosseum, greatwall]
