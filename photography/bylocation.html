@@ -46,10 +46,12 @@
 				var colosseum = new ol.Feature({
 					geometry: new ol.geom.Point(ol.proj.fromLonLat([12.49, 41.89])),
 					name: 'Colosseum'
+					link: '/photography/colosseum.html'
 				});
 				var greatwall = new ol.Feature({
 					geometry: new ol.geom.Point(ol.proj.fromLonLat([116.57, 40.43])),
 					name: 'Great Wall of China'
+					link: '/photography/greatwall.html'
 				});
 				var layer = new ol.layer.Vector({
 					source: new ol.source.Vector({
@@ -83,7 +85,9 @@
 								var coordinate = event.coordinate;
 								var feature = features[0];
 								var name = feature.values_.name;
-								content.innerHTML = '<p>Click here to view photos at the:</p><a href="/photography/colosseum.html">' + name + '</a>';
+								var link = feature.values_.link;
+								content.innerHTML = '<p>Click here to view photos at the:</p>
+								<a href="' + link + '">' + name + '</a>';
 								overlay.setPosition(coordinate);
 							} else {
 								 overlay.setPosition(undefined);
