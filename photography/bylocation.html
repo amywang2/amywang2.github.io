@@ -57,7 +57,7 @@
 					image: new ol.style.Icon(({
 						crossOrigin: 'anonymous',
 						src: '/images/mapmarker.png',
-						scale: 0.01
+						scale: 0.05
 					}))
 				});
 				
@@ -97,7 +97,7 @@
 								var feature = features[0];
 								var name = feature.values_.name;
 								var link = feature.values_.link;
-								content.innerHTML = '<p>Click here to view photos at the:</p><a href="' + link + '">' + name + '</a>';
+								content.innerHTML = '<p class="marker">Click here to view photos at the:</p><a class="marker" href="' + link + '">' + name + '</a>';
 								overlay.setPosition(coordinate);
 							} else {
 								 overlay.setPosition(undefined);

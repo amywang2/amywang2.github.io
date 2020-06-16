@@ -244,5 +244,9 @@ img {
 	transform: translate(-50%, -50%);
 	text-align: center;
 }
+.marker {
+	font-family: herman;
+	font-size: 110%;
+}
 /* #s are for ids 
 p.class is for class */
