@@ -78,10 +78,10 @@
 				};
 
 			 map.on('singleclick', function (event) {
-					 if (feature = map.getFeaturesAtPixel(event.pixel)) {
-							if (feature.length != 0) {
+					 if (features = map.getFeaturesAtPixel(event.pixel)) {
+							if (features.length != 0) {
 								var coordinate = event.coordinate;
-								var name = feature.name;
+								var name = features[0];
 								content.innerHTML = '<p>Click here to view photos at the:</p><code>' + name + '</code>';
 								overlay.setPosition(coordinate);
 							} else {
