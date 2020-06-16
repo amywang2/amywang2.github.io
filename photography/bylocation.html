@@ -48,7 +48,7 @@
 					name: 'Colosseum'
 				});
 				var greatwall = new ol.Feature({
-					geometry: new ol.geom.Point(ol.proj.fromLonLat([116.57, 40.43]))
+					geometry: new ol.geom.Point(ol.proj.fromLonLat([116.57, 40.43])),
 					name: 'Great Wall of China';
 				});
 				var layer = new ol.layer.Vector({
@@ -78,12 +78,13 @@
 				};
 
 			 map.on('singleclick', function (event) {
-					 if (map.hasFeatureAtPixel(event.pixel) === true) {
-							var coordinate = event.coordinate;
-							var name = event.name;
-
-							content.innerHTML = '<p>Click here to view photos at the:</p><code>' + name + '</code>';
-							overlay.setPosition(coordinate);
+					 if (feature === map.getFeaturesAtPixel(event.pixel)) {
+							if feature !=== null {
+								var coordinate = event.coordinate;
+								var name = feature.name;
+								content.innerHTML = '<p>Click here to view photos at the:</p><code>' + name + '</code>';
+								overlay.setPosition(coordinate);
+							}
 					 } else {
 						 overlay.setPosition(undefined);
 						 closer.blur();
