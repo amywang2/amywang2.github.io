@@ -81,8 +81,9 @@
 					 if (features = map.getFeaturesAtPixel(event.pixel)) {
 							if (features.length != 0) {
 								var coordinate = event.coordinate;
-								var name = features[0];
-								content.innerHTML = '<p>Click here to view photos at the:</p><code>' + name + '</code>';
+								var feature = features[0];
+								var name = feature.values_.name;
+								content.innerHTML = '<p>Click here to view photos at the:</p><a href="/photography/colosseum.html">' + name + '</a>';
 								overlay.setPosition(coordinate);
 							} else {
 								 overlay.setPosition(undefined);
