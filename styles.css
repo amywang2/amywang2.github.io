@@ -66,6 +66,10 @@ div.opaque {
 	height:600px;
 	margin: 2%;
 }
+.index {
+	height: 600px;
+	width: auto;
+}
 	/* slideshow */
 		.slideshow {
 			max-height: 500px;
