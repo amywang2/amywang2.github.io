@@ -54,20 +54,26 @@
 					name: 'Great Wall of China',
 					link: '/photography/greatwall.html'
 				});
+				var seoul = new ol.Feature({
+					geometry: new ol.geom.Point(ol.proj.fromLonLat([126.98, 37.57])),
+					name: 'Seoul',
+					link: '/photography/seoul.html'
+				});
 				var iconStyle = new ol.style.Style({
 					image: new ol.style.Icon(({
 						crossOrigin: 'anonymous',
 						src: '/images/mapmarker.png',
-						scale: 0.1
+						scale: 0.8
 					}))
 				});
 				
 				colosseum.setStyle(iconStyle);
 				greatwall.setStyle(iconStyle);
+				seoul.setStyle(iconStyle);
 
 				var layer = new ol.layer.Vector({
 					source: new ol.source.Vector({
-						features: [colosseum, greatwall]
+						features: [colosseum, greatwall, seoul]
 					})
 				});
 				map.addLayer(layer);
