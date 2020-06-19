@@ -1,7 +1,7 @@
 /* every page */ 
 body {
 	background-color: white;
-	cursor: url('/images/cursor.jpg'), auto;
+	cursor: url(/images/cursor.png), auto;
 }
 #headings {
 	font-family: herman;
