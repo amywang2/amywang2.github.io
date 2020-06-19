@@ -24,6 +24,7 @@
 
 		<center>
 			<h1 class="typehead">PHOTOGRAPHY (LOCATION)</h1>
+			<p>More locations coming soon!</p>
 			<div id="map" class="map"></div>
 			<div id="popup" class="ol-popup">
 				<a href="#" id="popup-closer" class="ol-popup-closer"></a>
@@ -97,7 +98,7 @@
 								var feature = features[0];
 								var name = feature.values_.name;
 								var link = feature.values_.link;
-								content.innerHTML = '<p class="marker">Click here to view photos at the:</p><a class="marker" href="' + link + '">' + name + '</a>';
+								content.innerHTML = '<p class="marker">Click here to view photos taken at the:</p><a class="marker" href="' + link + '">' + name + '</a>';
 								overlay.setPosition(coordinate);
 							} else {
 								 overlay.setPosition(undefined);
