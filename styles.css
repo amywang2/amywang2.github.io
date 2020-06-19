@@ -1,6 +1,7 @@
 /* every page */ 
 body {
 	background-color: white;
+	cursor: url('/images/cursor.jpg'), auto;
 }
 #headings {
 	font-family: herman;
