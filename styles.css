@@ -1,7 +1,9 @@
 /* every page */ 
 body {
 	background-color: white;
-	cursor: url(/images/cursor.png), auto;
+}
+body:hover {
+	cursor: url('/images/cursor.png'), auto;
 }
 #headings {
 	font-family: herman;
